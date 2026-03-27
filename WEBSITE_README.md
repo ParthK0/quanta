@@ -174,6 +174,61 @@ npm run dev
 http://localhost:3000
 ```
 
+## Update To GitHub
+
+If this project is not connected to a GitHub repository yet:
+
+```bash
+git init
+git add .
+git commit -m "Initial website setup"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
+If it is already connected and you just want to update the latest changes:
+
+```bash
+git add .
+git commit -m "Update website"
+git push
+```
+
+## Deploy To Vercel
+
+### Option 1: Deploy from GitHub (recommended)
+
+1. Push your latest code to GitHub.
+2. Go to Vercel dashboard and click **New Project**.
+3. Import your GitHub repository.
+4. Keep framework preset as **Next.js** (auto-detected).
+5. Add any required environment variables (if introduced later).
+6. Click **Deploy**.
+
+Vercel will automatically create a production deployment and a live URL.
+
+### Option 2: Deploy with Vercel CLI
+
+```bash
+npm i -g vercel
+vercel login
+vercel
+```
+
+For production deploy:
+
+```bash
+vercel --prod
+```
+
+## Post-Deployment Checklist
+
+- Confirm all main routes load correctly (`/`, `/team`, `/events`, `/projects`, `/gallery`)
+- Confirm mobile navigation opens/closes correctly
+- Confirm no console errors in browser dev tools
+- If admin pages are deployed, verify login and redirect behavior
+
 ## Suggested Next Enhancements
 
 - Replace demo auth with production authentication

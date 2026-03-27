@@ -39,33 +39,33 @@
 
 @layer base {
   :root, .dark {
-    --background: 240 10% 3.9%;
+    --background: 222 47% 7%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 222 47% 7%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 222 47% 7%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 326 100% 74%; 
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 186 100% 50%; 
+    --primary-foreground: 222 47% 7%;
 
     --secondary: 199 89% 48%; 
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 222 5% 65%;
 
-    --accent: 156 73% 58%; 
+    --accent: 186 50% 30%; 
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 186 100% 50%;
 
     --radius: 0.5rem;
   }
@@ -76,7 +76,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased selection:bg-pink-500/30 selection:text-pink-200;
+    @apply bg-background text-foreground antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
   }
   
   ::-webkit-scrollbar {
@@ -95,7 +95,7 @@
 }
 
 @utility text-glow {
-  text-shadow: 0 0 20px rgba(255,107,184,0.3);
+  text-shadow: 0 0 20px rgba(0,229,255,0.4);
 }
 
 @utility bg-grid-white {

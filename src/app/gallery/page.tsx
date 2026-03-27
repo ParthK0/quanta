@@ -1,27 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Trophy, Star } from "lucide-react";
-import Image from "next/image";
+import { Trophy, Star, Target } from "lucide-react";
 
 const ACHIEVEMENTS = [
   {
-    title: "1st Place - Global Datathon 2025",
-    desc: "Quanta's core team secured 1st place among 500+ universities worldwide in predicting climate change anomalies.",
+    title: "1ST PLACE - GLOBAL DATATHON",
+    desc: "Secured 1st out of 500+ global competing institutions predicting climate anomalies via remote telemetry.",
     icon: Trophy,
-    color: "text-yellow-400"
+    border: "border-[#00E5FF]/50 hover:bg-[#00E5FF] group-hover:text-black"
   },
   {
-    title: "Best Open Source Contribution",
-    desc: "Awarded by the National AI Foundation for our work on the NeuroScan framework.",
+    title: "BEST OPEN SOURCE",
+    desc: "Recognized by the National AI Foundation for raw architectural contributions to the NeuroScan framework.",
     icon: Star,
-    color: "text-primary"
+    border: "border-[#00E5FF]/50 hover:bg-[#00E5FF] group-hover:text-black"
   },
   {
-    title: "University Club of the Year",
-    desc: "Recognized consecutive years for outstanding student engagement and impactful tech workshops.",
-    icon: Award,
-    color: "text-secondary"
+    title: "ELITE TECH OUTPOST",
+    desc: "Consecutive institutional recognition for executing scalable student-led engineering workshops.",
+    icon: Target,
+    border: "border-[#00E5FF]/50 hover:bg-[#00E5FF] group-hover:text-black"
   }
 ];
 
@@ -36,67 +35,123 @@ const GALLERY = [
 
 export default function GalleryPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-24 pb-16">
-      <div className="container px-4 md:px-6">
+    <div className="flex flex-col min-h-screen bg-[#0B1120] selection:bg-[#00E5FF] selection:text-black pt-32 pb-16">
+      <div className="container px-6 md:px-12 lg:px-24">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="mb-20 border-b border-white/20 pb-8">
           <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold font-syne mb-6 text-white"
+            className="text-6xl md:text-[8rem] font-black font-syne text-white uppercase tracking-tighter leading-none"
           >
-            Club <span className="text-secondary text-glow">Legacy</span>
+            LEGACY<span className="text-[#00E5FF] animate-pulse">_</span>
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground font-dm-mono max-w-2xl mx-auto"
-          >
-            Celebrating our milestones, competition wins, and the vibrant memories from our events.
-          </motion.p>
+          <p className="text-white/50 font-mono mt-6 tracking-widest uppercase">// ARCHIVES OF SUCCESS</p>
         </div>
 
-        {/* Achievements Banner */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        {/* Active Archive Highlight - Overlapping Image Composition */}
+        <div className="w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-32">
+          {/* Legacy Context */}
+          <div className="flex-1 w-full max-w-2xl lg:max-w-none">
+            <h2 className="text-4xl md:text-5xl font-black font-syne text-transparent uppercase tracking-tighter"
+                style={{ WebkitTextStroke: "1px white" }}>
+              {"<sys>"} HIGHLIGHT {"</sys>"}
+            </h2>
+            <div className="mt-8 space-y-6">
+              <p className="text-xl md:text-2xl text-[#00E5FF] font-mono tracking-widest uppercase">
+                The Workspace Flow.
+              </p>
+              <p className="text-base md:text-xl text-white/60 font-mono uppercase tracking-widest leading-relaxed">
+                A visual representation of late nights, deep hardware tuning, and our relentless pursuit of state-of-the-art predictive architectures.
+              </p>
+            </div>
+          </div>
+
+          {/* Overlapping Image Composition */}
+          <div className="flex-1 w-full relative min-h-[400px] md:min-h-[550px] mt-10 lg:mt-0">
+            {/* Reference Frame Accent */}
+            <div className="absolute -right-4 top-4 md:-right-8 md:top-8 w-full h-[90%] border border-[#00E5FF]/20 mix-blend-screen pointer-events-none" />
+            
+            {/* Large Back Image (p2) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="absolute right-0 top-0 w-[80%] h-[85%] border border-white/10 bg-[#050A14] overflow-hidden"
+            >
+              <img 
+                src="/p2.jpeg" 
+                alt="Quanta Legacy Background" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105"
+              />
+            </motion.div>
+            
+            {/* Small Overlapping Front Image (whatsapp) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="absolute left-0 bottom-0 w-[60%] h-[55%] border-8 border-[#0B1120] bg-[#050A14] overflow-hidden z-10 shadow-2xl shadow-black/80"
+            >
+              <img 
+                src="/whatsapp.jpeg" 
+                alt="Quanta Highlight" 
+                className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 filter grayscale hover:grayscale-0"
+              />
+            </motion.div>
+
+            {/* Decorative Corner */}
+            <div className="absolute left-10 -bottom-8 w-24 h-24 border-b-2 border-l-2 border-[#00E5FF]/50 z-0 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Brutalist Achievements Strip */}
+        <div className="grid md:grid-cols-3 gap-0 border border-white/20 mb-24">
           {ACHIEVEMENTS.map((ach, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/10 transition-colors"
+              className={`group border border-white/20 p-10 flex flex-col justify-start transition-colors duration-300 cursor-default ${ach.border}`}
             >
-              <div className={`p-4 rounded-full bg-white/5 mb-6 ${ach.color}`}>
-                <ach.icon size={32} />
-              </div>
-              <h3 className="text-xl font-bold font-syne text-white mb-3">{ach.title}</h3>
-              <p className="text-muted-foreground text-sm">{ach.desc}</p>
+              <ach.icon className="w-12 h-12 text-white group-hover:text-black mb-8 transition-colors" strokeWidth={1.5} />
+              <h3 className="text-3xl font-black font-syne text-white group-hover:text-black uppercase tracking-tighter mb-4 transition-colors">
+                {ach.title}
+              </h3>
+              <p className="font-mono text-sm opacity-60 group-hover:opacity-100 group-hover:text-black uppercase tracking-widest leading-relaxed transition-colors">
+                {ach.desc}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Photo Gallery Grid */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold font-syne text-white mb-8">Event Gallery</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {/* Gallery Grid */}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-black font-syne uppercase tracking-tighter mb-10 text-white border-l-8 border-[#00E5FF] pl-6">
+            VISUAL LOGS
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/20">
             {GALLERY.map((img, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 3) * 0.1 }}
-                className="relative aspect-square overflow-hidden rounded-xl border border-white/10 group cursor-pointer"
+                className="relative aspect-[4/3] border border-white/20 overflow-hidden group bg-[#050A14]"
               >
-                <div className="absolute inset-0 bg-background/40 group-hover:bg-transparent transition-colors z-10" />
                 <img 
                   src={img} 
-                  alt={`Gallery image ${i + 1}`} 
-                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  alt={`Log ${i}`} 
+                  className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-105"
                 />
+                <div className="absolute top-4 left-4 bg-black border border-white/20 px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white font-mono text-xs tracking-widest">LOG_{i.toString().padStart(3, '0')}</span>
+                </div>
               </motion.div>
             ))}
           </div>

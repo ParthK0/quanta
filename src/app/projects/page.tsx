@@ -1,114 +1,103 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, ExternalLink, Code2 } from "lucide-react";
-import Image from "next/image";
+import { Globe } from "lucide-react";
 
 const PROJECTS = [
   {
-    title: "NeuroScan Framework",
-    desc: "An open-source deep learning framework for early detection of neurological anomalies using MRI scans. Built entirely by Quanta members.",
-    tags: ["Python", "TensorFlow", "Computer Vision"],
+    id: "00",
+    title: "NEUROSCAN",
+    desc: "An open-source deep learning framework for early detection of neurological anomalies using MRI scans. Built strictly in Python & TF.",
+    tags: ["PYTHON", "TENSORFLOW", "CV"],
     github: "#",
     live: "#",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80"
+    color: "hover:bg-[#00E5FF] hover:text-black"
   },
   {
-    title: "Campus Analytics Dashboard",
-    desc: "Real-time dashboard analyzing foot traffic, library occupancy, and cafeteria wait times using deployed IoT sensors.",
-    tags: ["React", "Next.js", "PostgreSQL", "Data Viz"],
+    id: "01",
+    title: "CAMPUS ANALYTICS",
+    desc: "Real-time hardware/software dashboard analyzing campus foot traffic, library occupancy, and infrastructure load via IoT.",
+    tags: ["NEXT.JS", "POSTGRESQL", "IOT"],
     github: "#",
     live: "#",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+    color: "hover:bg-[#00E5FF] hover:text-black"
   },
   {
-    title: "Algorithmic Trading Bot",
-    desc: "A reinforcement learning agent trained to paper-trade crypto markets based on sentiment analysis of financial news.",
-    tags: ["RL", "NLP", "Pandas", "API"],
+    id: "02",
+    title: "QUANTBOT",
+    desc: "A reinforcement learning agent trained to interact directly with trading APIs based on heavy sentiment analysis pipelines.",
+    tags: ["RL", "NLP", "PANDAS"],
     github: "#",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80"
+    color: "hover:bg-[#00E5FF] hover:text-black"
   },
   {
-    title: "Quanta AutoGrad",
-    desc: "A lightweight, numpy-based autograd engine designed for educational purposes to help students understand backpropagation.",
-    tags: ["Mathematics", "Python", "NumPy"],
+    id: "03",
+    title: "AUTOGRAD.PY",
+    desc: "A lightweight, raw numpy-based autograd engine designed to reverse-engineer backpropagation for educational architectures.",
+    tags: ["MATH", "PYTHON", "NUMPY"],
     github: "#",
-    image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&q=80"
+    color: "hover:bg-[#00E5FF] hover:text-black"
   }
 ];
 
 export default function ProjectsPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-24 pb-16">
-      <div className="container px-4 md:px-6">
+    <div className="flex flex-col min-h-screen bg-[#0B1120] selection:bg-[#00E5FF] selection:text-black pt-32 pb-16">
+      <div className="container px-6 md:px-12 lg:px-24">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="mb-20 border-b border-white/20 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold font-syne mb-6 text-white"
+            className="text-6xl md:text-[8rem] font-black font-syne text-white uppercase tracking-tighter leading-none"
           >
-            Showcase & <span className="text-accent text-glow">Open Source</span>
+            PROJECTS<span className="text-[#00E5FF] animate-pulse">_</span>
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground font-dm-mono max-w-2xl mx-auto"
-          >
-            Explore the projects we've built. From low-level AI engines to full-stack data dashboards.
-          </motion.p>
+          <span className="text-white/50 font-mono tracking-[0.2em] uppercase">// OPEN SOURCE INITIATIVES</span>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid gap-10 md:grid-cols-2 mb-20">
+        {/* Brutalist Grid */}
+        <div className="grid gap-0 md:grid-cols-2 border border-white/20 mb-24">
           {PROJECTS.map((project, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-background hover:bg-white/5 transition-all flex flex-col h-full"
+              className={`group flex flex-col justify-between p-10 md:p-14 min-h-[450px] border border-white/20 bg-[#0B1120] transition-colors duration-300 ${project.color}`}
             >
-              <div className="relative w-full h-64 overflow-hidden border-b border-white/10">
-                <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors z-10" />
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
-                />
+              <div className="flex justify-between items-start mb-8">
+                <span className="text-6xl font-black font-syne text-white/20 group-hover:text-black/30 transition-colors">
+                  {project.id}
+                </span>
+                <div className="flex gap-2">
+                  {project.github && (
+                    <a href={project.github} className="px-3 py-1 font-mono font-bold text-sm tracking-widest border border-white/20 group-hover:border-black/30 hover:bg-black hover:text-white transition-all">
+                      [GH]
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} className="px-3 py-1 border border-white/20 group-hover:border-black/30 hover:bg-black hover:text-white transition-all flex items-center justify-center">
+                      <Globe className="w-5 h-5" strokeWidth={1.5} />
+                    </a>
+                  )}
+                </div>
               </div>
 
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold font-syne text-white group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex space-x-3 text-muted-foreground">
-                    {project.github && (
-                      <a href={project.github} className="hover:text-white transition-colors" target="_blank" rel="noreferrer">
-                        <Globe className="w-5 h-5" />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a href={project.live} className="hover:text-white transition-colors" target="_blank" rel="noreferrer">
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-grow">
+              <div>
+                <h3 className="text-4xl md:text-5xl font-black font-syne uppercase tracking-tighter mb-6 leading-[1.1]">
+                  {project.title}
+                </h3>
+                <p className="font-mono text-sm md:text-base opacity-70 mb-10 leading-relaxed uppercase tracking-widest max-w-lg">
                   {project.desc}
                 </p>
-
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {project.tags.map((tag, j) => (
                     <span 
                       key={j} 
-                      className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-white/70"
+                      className="px-4 py-2 border border-white/30 group-hover:border-black/50 text-xs font-mono font-bold tracking-widest"
                     >
                       {tag}
                     </span>
@@ -120,16 +109,17 @@ export default function ProjectsPage() {
         </div>
 
         {/* Banner */}
-        <div className="rounded-2xl border border-secondary/30 bg-secondary/5 p-8 md:p-12 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid-white opacity-5" />
-          <div className="relative z-10 flex flex-col items-center">
-            <Code2 className="w-12 h-12 text-secondary mb-4" />
-            <h3 className="text-2xl font-bold font-syne text-white mb-2">Want to collaborate?</h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              We are always open to new project ideas and collaborations. Check out our GitHub or reach out to us!
+        <div className="border border-[#00E5FF] bg-[#00E5FF]/10 p-12 text-center relative overflow-hidden group hover:bg-[#00E5FF] transition-colors duration-500 cursor-pointer">
+          <div className="absolute inset-0 bg-[#00E5FF] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-5xl font-black font-syne text-white group-hover:text-black uppercase tracking-tighter mb-4 transition-colors duration-300">
+              BUILD WITH US_
+            </h3>
+            <p className="font-mono text-white/60 group-hover:text-black/80 tracking-widest uppercase mb-8 transition-colors duration-300">
+              Contribute to our repositories or pitch a new architecture.
             </p>
-            <a href="https://github.com/quantaclub" className="inline-flex h-12 items-center justify-center rounded-full bg-secondary text-secondary-foreground px-8 font-semibold hover:bg-secondary/90 transition-colors shadow-[0_0_20px_rgba(56,189,248,0.3)]">
-              Visit our GitHub
+            <a href="https://github.com/quantaclub" className="inline-block px-8 py-4 bg-white text-black font-mono font-bold tracking-widest uppercase border-2 border-transparent group-hover:border-black group-hover:bg-transparent group-hover:text-black transition-all duration-300">
+              GITHUB.COM/QUANTA
             </a>
           </div>
         </div>

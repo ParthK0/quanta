@@ -1,62 +1,67 @@
 import Link from "next/link";
-import { Globe, Link as LinkIcon, Send, Mail } from "lucide-react";
+import { Terminal, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-background py-12 md:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="font-syne font-bold text-2xl text-white text-glow">
-                QUANTA
-              </span>
+    <footer className="border-t border-white/20 bg-[#0B1120] py-16 md:py-24 selection:bg-[#00E5FF] selection:text-black">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/20 pb-16">
+          <div className="md:col-span-2 space-y-6">
+            <Link href="/" className="inline-block group">
+              <h2 className="text-4xl font-black font-syne text-white uppercase tracking-tighter leading-none group-hover:text-[#00E5FF] transition-colors">
+                QUANTA<span className="text-[#00E5FF] group-hover:text-white animate-pulse">_</span>
+              </h2>
             </Link>
-            <p className="max-w-xs text-muted-foreground text-sm">
-              Where Data Meets Intelligence. The premier data science, AI, and ML club empowering students.
+            <p className="max-w-md font-mono text-sm text-white/50 uppercase tracking-widest leading-relaxed">
+              // WHERE DATA MEETS INTELLIGENCE. THE PREMIER DATA SCIENCE, AI, AND ML CELL.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 hover:text-primary transition-colors text-muted-foreground">
-                <Globe size={18} />
+            <div className="flex space-x-4 pt-4 font-mono font-bold text-sm tracking-widest">
+              <a href="#" className="p-3 border border-white/20 hover:border-[#00E5FF] hover:bg-[#00E5FF] hover:text-black transition-colors text-white">
+                {"[ GH ]"}
               </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 hover:text-secondary transition-colors text-muted-foreground">
-                <LinkIcon size={18} />
+              <a href="#" className="p-3 border border-white/20 hover:border-[#00E5FF] hover:bg-[#00E5FF] hover:text-black transition-colors text-white">
+                {"[ IN ]"}
               </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 hover:text-accent transition-colors text-muted-foreground">
-                <Send size={18} />
+              <a href="#" className="p-3 border border-white/20 hover:border-white hover:bg-white hover:text-black transition-colors text-white">
+                {"[ X ]"}
               </a>
             </div>
           </div>
+          
           <div>
-            <h3 className="font-syne font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/events" className="hover:text-primary transition-colors">Events</Link></li>
-              <li><Link href="/projects" className="hover:text-primary transition-colors">Projects</Link></li>
-              <li><Link href="/resources" className="hover:text-primary transition-colors">Resources</Link></li>
-              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+            <h3 className="font-mono font-bold text-[#00E5FF] mb-6 tracking-[0.2em] uppercase text-sm">
+              {"< ROUTING >"}
+            </h3>
+            <ul className="space-y-4 font-mono text-sm uppercase tracking-widest text-white/70">
+              <li><Link href="/events" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">EVENTS</Link></li>
+              <li><Link href="/projects" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">PROJECTS</Link></li>
+              <li><Link href="/gallery" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">GALLERY</Link></li>
+              <li><Link href="/team" className="hover:text-white hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">TEAM</Link></li>
             </ul>
           </div>
+          
           <div>
-            <h3 className="font-syne font-semibold text-white mb-4">Contact</h3>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li className="flex items-center space-x-2">
-                <Mail size={16} />
-                <span>hello@quanta.club</span>
+            <h3 className="font-mono font-bold text-[#00E5FF] mb-6 tracking-[0.2em] uppercase text-sm">
+              {"< CONTACT >"}
+            </h3>
+            <ul className="space-y-4 font-mono text-xs uppercase tracking-widest text-white/70">
+              <li className="flex items-start space-x-3 group cursor-default">
+                <Terminal size={16} className="text-[#00E5FF] mt-0.5 group-hover:animate-pulse" />
+                <span className="group-hover:text-white transition-colors">HELLO@QUANTA.CLUB</span>
               </li>
-              <li>
-                <Link href="/contact" className="inline-block mt-2 px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full transition-colors text-xs uppercase tracking-wider font-semibold">
-                  Join Us
-                </Link>
+              <li className="flex items-start space-x-3 group cursor-default">
+                <MapPin size={16} className="text-[#00E5FF] mt-0.5 group-hover:animate-bounce" />
+                <span className="group-hover:text-white transition-colors leading-relaxed">MAIN UNIVERSITY CAMPUS<br/>COMPUTER SCIENCE DEPT.</span>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-border/40 text-center flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Quanta Data Science Club. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white">Terms of Service</Link>
+        
+        <div className="mt-8 flex flex-col md:flex-row justify-between items-center font-mono text-xs text-white/40 uppercase tracking-widest">
+          <p>{"(C) "}{new Date().getFullYear()} QUANTA SYS_ DAEMON. EXIT(0)</p>
+          <div className="mt-4 md:mt-0 space-x-6">
+            <Link href="/privacy" className="hover:text-white hover:underline decoration-[#00E5FF]">PRIVACY.MD</Link>
+            <Link href="/terms" className="hover:text-white hover:underline decoration-[#00E5FF]">TERMS.MD</Link>
           </div>
         </div>
       </div>

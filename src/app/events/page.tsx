@@ -2,88 +2,90 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Clock, MapPin, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { Terminal, MapPin } from "lucide-react";
 
 const MOCK_EVENTS = [
   {
     id: 1,
-    title: "Intro to Deep Learning",
-    date: "Aug 15, 2026",
-    time: "6:00 PM - 8:00 PM",
-    type: "Workshop",
-    location: "Main Auditorium",
+    title: "INTRO TO DEEP LEARNING",
+    date: "AUG 15, 2026",
+    time: "18:00 - 20:00",
+    type: "WORKSHOP",
+    location: "MAIN AUDITORIUM",
     status: "upcoming",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80"
+    accent: "group-hover:bg-[#00E5FF] group-hover:text-black",
+    border: "border-[#00E5FF]"
   },
   {
     id: 2,
-    title: "Quanta Datathon 2026",
-    date: "Sep 20-22, 2026",
-    time: "48 Hours",
-    type: "Hackathon",
-    location: "Innovation Hub",
+    title: "QUANTA DATATHON 2026",
+    date: "SEP 20-22, 2026",
+    time: "48 HOURS",
+    type: "HACKATHON",
+    location: "INNOVATION HUB",
     status: "upcoming",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80"
+    accent: "group-hover:bg-[#00E5FF] group-hover:text-black",
+    border: "border-[#00E5FF]"
   },
   {
     id: 3,
-    title: "AI in Healthcare Panel",
-    date: "July 10, 2026",
-    time: "5:00 PM",
-    type: "Talk",
-    location: "Virtual",
+    title: "AI IN HEALTHCARE",
+    date: "JUL 10, 2026",
+    time: "17:00",
+    type: "GUEST TALK",
+    location: "VIRTUAL",
     status: "past",
-    image: "https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?w=800&q=80"
+    accent: "group-hover:bg-[#00E5FF] group-hover:text-black",
+    border: "border-[#00E5FF]/50"
   },
   {
     id: 4,
-    title: "Python for Data Analysis",
-    date: "June 05, 2026",
-    time: "4:00 PM - 6:00 PM",
-    type: "Workshop",
-    location: "Lab 4B",
+    title: "PYTHON FOR DATA ANALYSIS",
+    date: "JUN 05, 2026",
+    time: "16:00 - 18:00",
+    type: "WORKSHOP",
+    location: "LAB 4B",
     status: "past",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+    accent: "group-hover:bg-[#00E5FF] group-hover:text-black",
+    border: "border-[#00E5FF]"
   }
 ];
 
 export default function EventsPage() {
   const [filter, setFilter] = useState<"all" | "upcoming" | "past">("all");
-
   const filteredEvents = MOCK_EVENTS.filter((e) => filter === "all" || e.status === filter);
 
   return (
-    <div className="flex flex-col min-h-screen pt-24 pb-16">
-      <div className="container px-4 md:px-6">
+    <div className="flex flex-col min-h-screen bg-[#0B1120] selection:bg-[#00E5FF] selection:text-black pt-32 pb-16">
+      <div className="container px-6 md:px-12 lg:px-24">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-white/20 pb-8 gap-8">
           <div>
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-4xl md:text-6xl font-bold font-syne mb-2 text-white"
+              className="text-6xl md:text-[8rem] font-bold font-syne text-white uppercase tracking-tighter leading-none"
             >
-              Our <span className="text-secondary text-glow">Events</span>
+              EVENTS<span className="text-[#00E5FF] animate-pulse">_</span>
             </motion.h1>
-            <p className="text-muted-foreground font-dm-mono">Join us for workshops, datathons, and guest talks.</p>
+            <p className="text-white/50 font-mono mt-4 tracking-widest uppercase">// HACKATHONS. WORKSHOPS. TALKS.</p>
           </div>
 
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex space-x-2 bg-white/5 p-1 rounded-full border border-white/10"
+            className="flex border border-white/20"
           >
             {["all", "upcoming", "past"].map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f as any)}
-                className={`px-6 py-2 rounded-full text-sm font-semibold capitalize transition-all ${
+                className={`px-6 py-3 text-xs md:text-sm font-mono font-bold uppercase tracking-widest transition-colors ${
                   filter === f 
-                    ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(255,107,184,0.3)]" 
-                    : "text-muted-foreground hover:text-white"
-                }`}
+                    ? "bg-[#00E5FF] text-black" 
+                    : "bg-transparent text-white/50 hover:bg-white/5"
+                } border-r border-white/20 last:border-r-0`}
               >
                 {f}
               </button>
@@ -91,62 +93,36 @@ export default function EventsPage() {
           </motion.div>
         </div>
 
-        {/* Events Grid */}
-        <motion.div layout className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        {/* Brutalist Events List */}
+        <motion.div layout className="flex flex-col gap-6">
           <AnimatePresence>
             {filteredEvents.map((event) => (
               <motion.div
                 key={event.id}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card hover:border-secondary/40 transition-all flex flex-col sm:flex-row h-full"
+                className={`group relative flex flex-col md:flex-row justify-between items-start md:items-center border border-white/20 bg-[#0B1120] transition-all duration-300 p-8 cursor-pointer ${event.accent}`}
               >
-                {/* Image Section */}
-                <div className="relative w-full sm:w-2/5 aspect-video sm:aspect-auto overflow-hidden">
-                  <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors z-10" />
-                  <img src={event.image} alt={event.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="px-3 py-1 bg-black/60 backdrop-blur border border-white/20 rounded-full text-xs font-bold text-white tracking-wider uppercase">
-                      {event.type}
-                    </span>
-                  </div>
+                <div className="flex flex-col space-y-2 mb-6 md:mb-0">
+                  <span className={`inline-block px-3 py-1 text-xs font-mono font-bold tracking-widest border ${event.border} text-white group-hover:border-black group-hover:text-black w-fit mb-2 transition-colors`}>
+                    {event.type}
+                  </span>
+                  <h3 className="text-3xl md:text-5xl font-black font-syne uppercase tracking-tighter leading-none">
+                    {event.title}
+                  </h3>
                 </div>
 
-                {/* Content Section */}
-                <div className="p-6 flex flex-col justify-between w-full sm:w-3/5">
-                  <div>
-                    <h3 className="text-xl font-bold font-syne text-white mb-4 group-hover:text-secondary transition-colors line-clamp-2">
-                      {event.title}
-                    </h3>
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-center text-sm text-muted-foreground font-dm-mono">
-                        <Calendar className="w-4 h-4 mr-2 text-primary" />
-                        {event.date}
-                      </div>
-                      <div className="flex items-center text-sm text-muted-foreground font-dm-mono">
-                        <Clock className="w-4 h-4 mr-2 text-accent" />
-                        {event.time}
-                      </div>
-                      <div className="flex items-center text-sm text-muted-foreground font-dm-mono">
-                        <MapPin className="w-4 h-4 mr-2 text-secondary" />
-                        {event.location}
-                      </div>
-                    </div>
+                <div className="flex flex-col md:text-right space-y-1 font-mono text-sm tracking-widest opacity-70 group-hover:opacity-100">
+                  <div className="flex items-center md:justify-end">
+                    <Terminal className="w-4 h-4 mr-2" />
+                    {event.date} // {event.time}
                   </div>
-
-                  <div>
-                    {event.status === "upcoming" ? (
-                      <Link href={`/events/${event.id}`} className="inline-flex items-center text-sm font-semibold text-primary hover:text-white transition-colors">
-                        Register Now <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </Link>
-                    ) : (
-                      <Link href={`/events/${event.id}`} className="inline-flex items-center text-sm font-semibold text-muted-foreground hover:text-white transition-colors">
-                        View Recap <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </Link>
-                    )}
+                  <div className="flex items-center md:justify-end">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    {event.location}
                   </div>
                 </div>
               </motion.div>
@@ -155,8 +131,8 @@ export default function EventsPage() {
         </motion.div>
 
         {filteredEvents.length === 0 && (
-          <div className="text-center py-20 text-muted-foreground border border-white/5 rounded-2xl bg-white/5">
-            No {filter} events found at the moment. Check back soon!
+          <div className="text-center py-24 border border-white/10 mt-6 bg-[#050A14]">
+            <p className="font-mono text-[#00E5FF] uppercase tracking-widest">{"> NO EVENTS MATCHING FILTER_"}</p>
           </div>
         )}
 

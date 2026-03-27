@@ -8,15 +8,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Team", href: "/team" },
-  { name: "Events", href: "/events" },
-  { name: "Projects", href: "/projects" },
-  { name: "Resources", href: "/resources" },
-  { name: "Blog", href: "/blog" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Contact", href: "/contact" },
+  { name: "[ HOME ]", href: "/" },
+  { name: "[ TEAM ]", href: "/team" },
+  { name: "[ EVENTS ]", href: "/events" },
+  { name: "[ PROJECTS ]", href: "/projects" },
+  { name: "[ GALLERY ]", href: "/gallery" },
 ];
 
 export function Navbar() {
@@ -24,35 +20,31 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="font-syne font-bold text-xl tracking-tight text-white text-glow">
-            QUANTA
+    <header className="fixed top-0 z-50 w-full border-b border-white/20 bg-[#0B1120]/95 backdrop-blur-md selection:bg-[#00E5FF] selection:text-black">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 flex h-20 items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2 group">
+          <span className="text-2xl lg:text-3xl font-black font-syne text-white uppercase tracking-tighter leading-none group-hover:text-[#00E5FF] transition-colors">
+            QUANTA<span className="animate-pulse">_</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        
+        <nav className="hidden md:flex items-center space-x-8 text-xs font-mono font-bold tracking-[0.2em] uppercase">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "transition-colors hover:text-primary",
-                pathname === link.href ? "text-primary" : "text-muted-foreground"
+                "transition-all hover:text-[#00E5FF] py-2",
+                pathname === link.href ? "text-[#00E5FF] border-b-2 border-[#00E5FF]" : "text-white/50 border-b-2 border-transparent"
               )}
             >
               {link.name}
             </Link>
           ))}
-          <Link
-            href="/admin/login"
-            className="ml-4 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all text-xs"
-          >
-            Admin
-          </Link>
         </nav>
+        
         <button
-          className="md:hidden p-2 text-muted-foreground hover:text-white transition-colors"
+          className="md:hidden p-2 text-white/50 hover:text-[#00E5FF] transition-colors border border-transparent hover:border-[#00E5FF]"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -65,17 +57,17 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-border/40 bg-background/95 backdrop-blur overflow-hidden"
+            className="md:hidden border-b border-white/20 bg-[#0B1120] overflow-hidden"
           >
-            <nav className="flex flex-col space-y-4 p-4 text-center">
+            <nav className="flex flex-col space-y-0 text-center font-mono text-sm tracking-[0.2em] uppercase font-bold">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "text-lg transition-colors hover:text-primary",
-                    pathname === link.href ? "text-primary font-bold" : "text-muted-foreground"
+                    "py-6 border-b border-white/10 transition-colors hover:bg-white/5 hover:text-[#00E5FF]",
+                    pathname === link.href ? "text-[#00E5FF] bg-white/5" : "text-white/50"
                   )}
                 >
                   {link.name}
