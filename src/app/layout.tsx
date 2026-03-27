@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, DM_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { PwaRegistry } from "@/components/pwa-registry";
 import "./globals.css";
 
 const syne = Syne({
@@ -18,6 +19,19 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Quanta - The Data Science Club",
   description: "Where Data Meets Intelligence. Empowering students in AI, ML, and Data Analytics.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Quanta",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0B1120",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -28,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${syne.variable} ${dmMono.variable} font-sans bg-background text-foreground min-h-screen flex flex-col`}>
+        <PwaRegistry />
         <Navbar />
         <main className="flex-grow">
           {children}
