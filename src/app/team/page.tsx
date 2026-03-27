@@ -7,7 +7,7 @@ import { Globe } from "lucide-react";
 const teamMembers = [
   {
     name: "Manjeet",
-    role: "p1",
+    role: "core member",
     bio: "Dedicated to advancing Quanta's mission through technical excellence.",
     image: "/team-members/1-manjeet.webp",
     github: "#",
@@ -15,7 +15,7 @@ const teamMembers = [
   },
   {
     name: "Ansh Vashisth",
-    role: "p2",
+    role: "core member",
     bio: "Driving innovation and team synergy across all internal projects and initiatives.",
     image: "/team-members/2-ansh-vashisth.jpeg",
     github: "#",
