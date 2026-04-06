@@ -34,7 +34,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-4 font-mono text-sm uppercase tracking-widest text-white/70">
               <li><Link href="/events" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">EVENTS</Link></li>
-              <li><Link href="/projects" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">PROJECTS</Link></li>
+              <li><Link href="/resources" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">RESOURCES</Link></li>
               <li><Link href="/gallery" className="hover:text-[#00E5FF] hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">GALLERY</Link></li>
               <li><Link href="/team" className="hover:text-white hover:pl-2 transition-all before:content-['>'] before:mr-2 before:opacity-0 hover:before:opacity-100">TEAM</Link></li>
             </ul>

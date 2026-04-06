@@ -17,7 +17,7 @@ The website is divided into five main sections, each serving a distinct purpose 
 - **Filterable Dashboard:** Users can toggle between "ALL", "UPCOMING", and "PAST" events seamlessly.
 - **Interactive Event Cards:** Brutalist list items displaying workshops, hackathons, and guest talks with their respective dates, times, locations, and styling. Hovering triggers a full background color inversion.
 
-### 3. Projects (`/projects`)
+### 3. Resources (`/resources`)
 - **Open-Source Initiatives:** Showcases Quanta's in-house projects (e.g., NeuroScan, Campus Analytics, QuantBot, Autograd.py).
 - **Technical Metadata:** Each project card displays the core technologies used (Python, Next.js, TensorFlow, RL, etc.) alongside direct links to GitHub and Live Deployments via Lucide icons.
 - **Build With Us Banner:** A call-to-action banner linking directly to the organization's GitHub to encourage open-source contributions.
