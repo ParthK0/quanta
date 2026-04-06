@@ -1,163 +1,49 @@
-# Quanta - Data Science Club Website
+# Quanta
 
-Quanta is a modern, multi-page club website built with Next.js App Router for a student data science community. It includes:
+The official website for **Quanta**, a premier student-led research cell dedicated to advancing Machine Learning, Artificial Intelligence, and Data Engineering. 
 
-- A public-facing website (home, about, team, events, projects, resources, blog, gallery, contact)
-- A protected admin area with mock session authentication
-- Responsive navigation and animated UI built with Framer Motion
+Built with Next.js, Tailwind CSS, and Framer Motion, the platform features a highly dynamic, brutalist dark-mode aesthetic with interactive micro-animations and neon accents.
 
-## Overview
+## Project Structure & Features
 
-This project showcases a complete front-end experience for a university/club website, including an executive dashboard-style admin panel.
+The website is divided into five main sections, each serving a distinct purpose for the community:
 
-The design language is:
+### 1. Home (`/`)
+- **Hero Banner:** A bold, high-contrast introduction featuring the community's primary taglines ("Architecting Intelligence").
+- **Mission Statement:** Describes Quanta's focus on open-source architecture and rigorous deployment cycles, accompanied by a dynamic overlapping image composition.
+- **Core Domains:** A 3-column brutalist hover-grid detailing the core focus areas: Machine Learning, Data Engineering, and Artificial Intelligence. 
 
-- Dark UI with neon accents
-- Bold heading typography (Syne)
-- Mono support typography (DM Mono)
-- Motion-driven transitions and section reveals
+### 2. Events (`/events`)
+- **Filterable Dashboard:** Users can toggle between "ALL", "UPCOMING", and "PAST" events seamlessly.
+- **Interactive Event Cards:** Brutalist list items displaying workshops, hackathons, and guest talks with their respective dates, times, locations, and styling. Hovering triggers a full background color inversion.
+
+### 3. Projects (`/projects`)
+- **Open-Source Initiatives:** Showcases Quanta's in-house projects (e.g., NeuroScan, Campus Analytics, QuantBot, Autograd.py).
+- **Technical Metadata:** Each project card displays the core technologies used (Python, Next.js, TensorFlow, RL, etc.) alongside direct links to GitHub and Live Deployments via Lucide icons.
+- **Build With Us Banner:** A call-to-action banner linking directly to the organization's GitHub to encourage open-source contributions.
+
+### 4. Legacy & Gallery (`/gallery`)
+- **Achievements Strip:** Accentuates major awards and institutional recognitions (e.g., 1st Place Global Datathon, Best Open Source) using clear iconography and mono subtext.
+- **Visual Logs:** A highly structured 3-column grid of photography representing "The Workspace Flow". Images utilize CSS filters to transition from grayscale to full color upon hover alongside custom `LOG_000` badges.
+
+### 5. Team (`/team`)
+- **Dual-Squad Layout:** Organizes the club into two distinct divisions: **AI-Tech Force** (driving technical initiatives) and **Operations Squad** (managing infrastructure and outreach).
+- **Responsive Member Cards:** Features a detailed desktop hover-reveal portrait card (masking team information until hovered), alongside a compact mobile-friendly horizontal layout showing roles and biographies.
+- **Social Integration:** Scalable structural validation ensures that individual team member custom SVG links (GitHub, LinkedIn, and Instagram) only display if a valid tracking URL is present.
 
 ## Tech Stack
-
-- Next.js 16.2.1 (App Router)
-- React 19.2.4
-- TypeScript
-- Tailwind CSS v4
-- Framer Motion
-- Lucide React
-- clsx + tailwind-merge (via utility helper)
+- **Framework:** Next.js (App Router, React)
+- **Styling:** Tailwind CSS (Custom `#00E5FF` cyan and `#A78BFA` purple accents, complex brutalist borders, Syne & Mono typography combinations)
+- **Animation:** Framer Motion (Scroll reveals, staggered loaders, and Layout animations for filtering)
+- **Icons:** Lucide React & Custom SVG implementations
 
 ## Getting Started
 
-### 1. Install dependencies
+First, run the development server locally:
 
 ```bash
 npm install
-```
-
-### 2. Run the development server
-
-```bash
 npm run dev
 ```
 
-Open:
-
-```text
-http://localhost:3000
-```
-
-### 3. Build for production
-
-```bash
-npm run build
-npm run start
-```
-
-## Available Scripts
-
-- `npm run dev` - Start local development server
-- `npm run build` - Create production build
-- `npm run start` - Run production server
-- `npm run lint` - Run ESLint
-
-## Route Map
-
-### Public routes
-
-- `/` - Home
-- `/about` - Club mission, vision, domains
-- `/team` - Core team cards
-- `/events` - Event listing with status filter
-- `/projects` - Projects page
-- `/resources` - Learning/resources page
-- `/blog` - Public blog page
-- `/gallery` - Media gallery page
-- `/contact` - Contact/join page
-
-### Admin routes
-
-- `/admin/login` - Login page
-- `/admin` - Dashboard
-- `/admin/events` - Event management table + modal
-- `/admin/blog` - Blog management table
-- `/admin/team` - Member management page
-
-## Admin Authentication (Mock)
-
-Admin protection is implemented using middleware and a cookie named `admin_session`.
-
-- Protected area: all `/admin/*` routes except `/admin/login`
-- On successful login: cookie `admin_session=authenticated` is set
-- Unauthenticated users are redirected to `/admin/login`
-- Logged-in users visiting `/admin/login` are redirected to `/admin`
-
-Current demo password:
-
-```text
-admin123
-```
-
-Important: this is demo-only auth and is not secure for production use.
-
-## Project Structure
-
-```text
-src/
-	app/
-		layout.tsx
-		page.tsx
-		globals.css
-		about/page.tsx
-		blog/page.tsx
-		contact/page.tsx
-		events/page.tsx
-		gallery/page.tsx
-		projects/page.tsx
-		resources/page.tsx
-		team/page.tsx
-		admin/
-			layout.tsx
-			page.tsx
-			login/page.tsx
-			blog/page.tsx
-			events/page.tsx
-			team/page.tsx
-	components/
-		navbar.tsx
-		footer.tsx
-	lib/
-		utils.ts
-	middleware.ts
-```
-
-## Styling and UI Notes
-
-- Global tokens and custom utilities are in `src/app/globals.css`
-- Fonts are configured in root layout using `next/font/google`
-- Navigation is responsive with desktop and mobile behavior
-- Motion effects are implemented with Framer Motion on key sections and lists
-
-## Current Limitations
-
-The following links/routes are referenced by UI but not currently implemented as pages:
-
-- `/join`
-- `/privacy`
-- `/terms`
-- Dynamic event detail pages (for links like `/events/1`)
-
-These should be added before production deployment.
-
-## Recommended Next Improvements
-
-- Replace mock admin authentication with a real auth provider
-- Replace hardcoded mock data with API/database-backed content
-- Add dynamic route handlers for event/blog detail pages
-- Add form validation and backend integration for contact/admin actions
-- Add unit/integration tests and CI checks
-
-## License
-
-This repository currently has no explicit license file.
-Add a `LICENSE` file to define usage terms.
+Open [http://localhost:3000](http://localhost:3000) with your standard web browser to see the result. The application is meant to be highly responsive and performant across mobile, tablet, and desktop viewports.
