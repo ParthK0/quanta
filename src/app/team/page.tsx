@@ -70,7 +70,10 @@ const squads: Squad[] = [
         name: "Vanshika",
         role: "Social Media Head",
         bio: "Building digital presence and community engagement across all platforms.",
-        image: null,
+        image: "/team-members/vanshika/vanshika.jpg",
+        github: "https://github.com/vanshika-2105",
+        linkedin: "https://www.linkedin.com/in/vanshika-prajapati-a4849933a?utm_source=share_via&utm_content=profile&utm_medium=member_android301/",
+        
       },
     ],
   },
@@ -419,7 +422,7 @@ export default function TeamPage() {
             transition={{ delay: 0.1 }}
             className="font-mono text-xs md:text-sm tracking-[0.3em] uppercase text-[#00E5FF]/80 mb-2 md:mb-3"
           >
-            // Two Squads. One Mission.
+            {"// Two Squads. One Mission."}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -464,7 +467,7 @@ export default function TeamPage() {
               className="font-mono tracking-widest uppercase text-xs md:text-sm"
               style={{ color: squad.accent }}
             >
-              // {squad.members.length} Members
+              {`// ${squad.members.length} Members`}
             </span>
           </motion.div>
 
