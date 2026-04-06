@@ -55,7 +55,7 @@ const squads: Squad[] = [
         name: "Akarsh",
         role: "Creative Content Strategist",
         bio: "Crafting compelling narratives and visual storytelling for the tech brand.",
-        image: null,
+        image: "/team-members/10-akarsh.jpeg",
 
       },
       {
@@ -70,7 +70,7 @@ const squads: Squad[] = [
         name: "Vanshika",
         role: "Social Media Head",
         bio: "Building digital presence and community engagement across all platforms.",
-        image: "/team-members/vanshika/vanshika.jpg",
+        image: "/team-members/11-vanshika.jpeg",
         github: "https://github.com/vanshika-2105",
         linkedin: "https://www.linkedin.com/in/vanshika-prajapati-a4849933a?utm_source=share_via&utm_content=profile&utm_medium=member_android301/",
         
