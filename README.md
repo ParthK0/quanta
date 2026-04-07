@@ -1,6 +1,6 @@
 # Quanta
 
-The official website for **Quanta**, a premier student-led research cell dedicated to advancing Machine Learning, Artificial Intelligence, and Data Engineering. 
+The official website for *Quanta*, a premier student-led research cell dedicated to advancing Machine Learning, Artificial Intelligence, and Data Engineering. 
 
 Built with Next.js, Tailwind CSS, and Framer Motion, the platform features a highly dynamic, brutalist dark-mode aesthetic with interactive micro-animations and neon accents.
 
