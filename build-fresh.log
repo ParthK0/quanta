@@ -1,0 +1,25 @@
+﻿Γû▓ Next.js 16.2.1 (Turbopack)
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 4.8s
+  Running TypeScript ...
+  Finished TypeScript in 4.6s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/8) ...
+  Generating static pages using 9 workers (2/8) 
+  Generating static pages using 9 workers (4/8) 
+  Generating static pages using 9 workers (6/8) 
+Γ£ô Generating static pages using 9 workers (8/8) in 1687ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /events
+Γö£ Γùï /gallery
+Γö£ Γùï /resources
+Γöö Γùï /team
+
+
+Γùï  (Static)  prerendered as static content
+

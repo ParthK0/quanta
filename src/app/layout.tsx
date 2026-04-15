@@ -40,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${syne.variable} ${dmMono.variable} font-sans bg-background text-foreground min-h-screen flex flex-col`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${syne.variable} ${dmMono.variable} font-sans bg-background text-foreground min-h-screen flex flex-col`}>
         <PwaRegistry />
         <Navbar />
         <main className="flex-grow">

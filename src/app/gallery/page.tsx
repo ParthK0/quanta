@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Trophy, Star, Target } from "lucide-react";
 
 const ACHIEVEMENTS = [
@@ -30,10 +31,15 @@ const GALLERY = [
   "https://images.unsplash.com/photo-1528605105345-5344ea20e269?w=800&q=80",
   "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80",
   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80"
+  "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80",
+  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+  "https://images.unsplash.com/photo-1574169208507-84376144848b?w=800&q=80",
+  "https://images.unsplash.com/photo-1582192730841-2a682d7375f9?w=800&q=80"
 ];
 
 export default function GalleryPage() {
+  const [showAllLogs, setShowAllLogs] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen bg-[#0B1120] selection:bg-[#00E5FF] selection:text-black pt-32 pb-16">
       <div className="container px-6 md:px-12 lg:px-24">
@@ -84,7 +90,7 @@ export default function GalleryPage() {
               <img 
                 src="/p2.jpeg" 
                 alt="Quanta Legacy Background" 
-                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105"
+                className="w-full h-full object-cover transition-opacity duration-500 hover:scale-105"
               />
             </motion.div>
             
@@ -99,7 +105,7 @@ export default function GalleryPage() {
               <img 
                 src="/whatsapp.jpeg" 
                 alt="Quanta Highlight" 
-                className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 filter grayscale hover:grayscale-0"
+                className="w-full h-full object-cover transition-opacity duration-500 hover:scale-105"
               />
             </motion.div>
 
@@ -129,31 +135,56 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        {/* Gallery Grid */}
+        {/* Visual Logs - Grid View */}
         <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-black font-syne uppercase tracking-tighter mb-10 text-white border-l-8 border-[#00E5FF] pl-6">
-            VISUAL LOGS
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/20">
-            {GALLERY.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: (i % 3) * 0.1 }}
-                className="relative aspect-[4/3] border border-white/20 overflow-hidden group bg-[#050A14]"
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 gap-6">
+            <h2 className="text-4xl md:text-5xl font-black font-syne uppercase tracking-tighter text-white border-l-8 border-[#00E5FF] pl-6">
+              VISUAL LOGS
+            </h2>
+            {GALLERY.length > 6 && (
+              <button 
+                onClick={() => setShowAllLogs(!showAllLogs)}
+                className="px-6 py-3 border border-[#00E5FF] text-[#00E5FF] hover:bg-[#00E5FF] hover:text-black transition-colors font-mono uppercase tracking-widest text-sm flex items-center gap-2 group"
               >
-                <img 
-                  src={img} 
-                  alt={`Log ${i}`} 
-                  className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 bg-black border border-white/20 px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white font-mono text-xs tracking-widest">LOG_{i.toString().padStart(3, '0')}</span>
-                </div>
-              </motion.div>
-            ))}
+                {showAllLogs ? "Collapse Data >" : "Expand Logs >"}
+              </button>
+            )}
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence>
+              {GALLERY.slice(0, showAllLogs ? GALLERY.length : 6).map((img, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
+                  className="group relative aspect-[4/3] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
+                >
+                  <img 
+                    src={img} 
+                    alt={`Log ${i}`} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale-[0.2] group-hover:grayscale-0"
+                  />
+                  
+                  {/* Detail Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[#00E5FF] font-mono text-[10px] tracking-[0.3em] mb-2 uppercase block">DATA_STREAM_{i.toString().padStart(3, '0')}</span>
+                    <h4 className="text-white font-syne font-bold text-xl uppercase tracking-tighter">ENVIRONMENTAL_LOG</h4>
+                    <div className="w-8 h-0.5 bg-[#00E5FF] mt-2 mb-2" />
+                    <p className="text-white/60 font-mono text-[9px] uppercase tracking-[0.2em] leading-relaxed">
+                      SNAPSHOT_ACTIVE // STABILITY: 98.4%
+                    </p>
+                  </div>
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bg-black/80 border border-white/20 px-3 py-1">
+                    <span className="text-[#00E5FF] font-mono text-[10px] tracking-widest uppercase">LOG_{i.toString().padStart(3, '0')}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
 

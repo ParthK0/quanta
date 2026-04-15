@@ -240,7 +240,7 @@ function DesktopCard({
           <h3 className="text-2xl md:text-3xl font-black font-syne text-black uppercase tracking-tighter leading-none mb-2">
             {member.name}
           </h3>
-          <div className="w-full h-[2px] bg-black/20 mb-3" />
+
           <p className="text-black font-mono font-bold text-sm tracking-widest uppercase mb-3">
             {member.role}
           </p>
@@ -406,11 +406,11 @@ export default function TeamPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0B1120] selection:bg-[#00E5FF] selection:text-black">
       {/* Banner */}
-      <section className="relative w-full h-[45vh] md:h-[65vh] min-h-[320px] md:min-h-[500px] border-b border-white/10 overflow-hidden mt-16">
+      <section className="relative w-full h-[45vh] md:h-[65vh] min-h-[320px] md:min-h-[500px] overflow-hidden mt-16">
         <img
           src="/p2.jpeg"
           alt="Quanta Team Background"
-          className="w-full h-full object-cover object-[center_30%] opacity-50 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_30%] opacity-100 transition-all duration-1000"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[#00E5FF]/5 mix-blend-overlay pointer-events-none" />
@@ -445,7 +445,7 @@ export default function TeamPage() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="mb-8 md:mb-14 border-b border-white/10 pb-4 md:pb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-3 md:gap-4"
+            className="mb-6 md:mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-3 md:gap-4"
           >
             <div>
               <span

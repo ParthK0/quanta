@@ -73,7 +73,7 @@ export default function Home() {
                 <img 
                   src="/p2.jpeg" 
                   alt="Quanta Team Activity" 
-                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-opacity duration-500 hover:scale-105"
                 />
               </motion.div>
               
@@ -88,7 +88,7 @@ export default function Home() {
                 <img 
                   src="/whatsapp.jpeg" 
                   alt="Quanta Workspace Session" 
-                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 filter grayscale hover:grayscale-0"
+                  className="w-full h-full object-cover transition-opacity duration-500 hover:scale-105"
                 />
               </motion.div>
 

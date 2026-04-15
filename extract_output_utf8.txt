@@ -1,0 +1,47 @@
+﻿
+--- Extracting E:\quanta\src\app\events\event details past\Event 2.docx ---
+
+Text content:
+On December 13, 2025, Galgotias University hosted an intensive one-day online workshop titled "Hands-On With NVIDIA: Fundamentals of Deep Learning." This session was designed to bridge the gap between theoretical AI concepts and real-world application, utilizing NVIDIAÆs industry-standard software environment.
+Participants explored the core mechanics of neural networks, gaining practical experience in:
+Data Augmentation: Techniques to improve model robustness.
+Neural Network Architecture: Building and training models from scratch.
+Transfer Learning: Leveraging pre-trained models to accelerate development.
+The workshop emphasized a "learn-by-doing" approach, where attendees used NVIDIA GPU-accelerated containers to solve complex computer vision and data processing tasks. By the end of the session, students and professionals alike were equipped to implement deep learning workflows, earning a recognized competency in the foundational tools driving the modern AI revolution.
+#DeepLearning #NVIDIA #GalgotiasUniversity #ArtificialIntelligence #TechWorkshop #HandsOnLearning #NeuralNetworks #FutureOfAI
+Extracted image: word/media/image1.jpeg
+Extracted image: word/media/image2.jpeg
+Extracted image: word/media/image3.jpeg
+Extracted image: word/media/image4.jpeg
+
+--- Extracting E:\quanta\src\app\events\event details past\Event1.docx ---
+
+Text content:
+The Innovision 2026: TCU Verse Buildstation, an intensive 8-hour technology-building event, was successfully organized by the Department of Artificial Intelligence and Data Science at Galgotias University on January 10, 2026. This initiative provided a collaborative platform for 50 attendees to transform creative concepts into functional prototypes.  
+Participants worked in teams to tackle real-world challenges using emerging technologies like AI, Data Science, and modern software development. The event featured a fast-paced environment focused on brainstorming, rapid development, and project pitching. Beyond technical implementation, students benefited from expert mentorship, mock interviews, and networking opportunities that bridged the gap between academic theory and industry expectations.  
+The Buildstation concluded with the recognition of winning teams, celebrating a culture of innovation and entrepreneurial thinking. This successful event empowered students with enhanced technical, leadership, and communication skills.  
+#Innovision2026 #TCUVerse #Buildstation #DataScience #ArtificialIntelligence #GalgotiasUniversity #TechInnovation #Hackathon #SkillDevelopment #FutureTech
+Extracted image: word/media/image2.png
+Extracted image: word/media/image3.png
+Extracted image: word/media/image1.png
+Extracted image: word/media/image4.png
+
+--- Extracting E:\quanta\src\app\events\event details past\Event3.docx ---
+
+Text content:
+The ôA Series: All About Moveö, an engaging academic and interactive session, is being organized by the Department of Artificial Intelligence and Data Science, School of Computer Science & Engineering (SCSE) at Galgotias University on December 20, 2025, at 11:00 AM (IST). This initiative aims to provide a collaborative platform for students and young professionals to explore emerging ideas, innovation, and practical perspectives in technology and career growth.
+Participants will gain insights from accomplished speakers, Anshul Kanswal and Anmol Ratan, who will share their experiences, real-world exposure, and professional journeys. The session will focus on bridging the gap between academic learning and industry expectations by emphasizing mindset development, adaptability, and informed decision-making. Through interactive discussions and practical examples, attendees will better understand how to navigate challenges and prepare for future opportunities in AI, data science, and related domains.
+The session is designed to promote critical thinking, continuous learning, and innovation-driven growth aligned with global technological advancements. It promises to be an enriching experience, empowering participants with clarity, confidence, and a forward-looking approach toward personal and professional excellence.
+#AllAboutMove #GalgotiasUniversity #ArtificialIntelligence #DataScience #TechInnovation #CareerGrowth #StudentDevelopment #FutureReady #Innovation #Learning
+Extracted image: word/media/image2.png
+Extracted image: word/media/image3.png
+Extracted image: word/media/image1.png
+Extracted image: word/media/image4.png
+
+--- Extracting E:\quanta\src\app\events\event details past\Event4.docx ---
+
+Text content:
+Galgotias University recently hosted an intellectually stimulating two-day workshop, "AI Innovation Unleashed: Grant Writing and Hands-on with NVIDIA & Generative AI," held on November 21st and 22nd, 2025. This transformative event served as a nexus for academic excellence and technical prowess, bridging the gap between sophisticated theoretical frameworks and practical, industry-aligned application.
+By integrating NVIDIAÆs industry-leading technology into the hands-on sessions, the workshop offered an unparalleled experiential learning environment. Students departed not only with enhanced technical proficiency but also with a fortified vision for their future contributions to the AI ecosystem. This initiative underscores our commitment to fostering a forward-thinking community, equipping the next generation of technologists with the resilience, creativity, and expertise to pioneer groundbreaking solutions in an rapidly evolving digital era.
+#GalgotiasUniversity #AIInnovation #GenerativeAI #NVIDIA #GrantWriting #Workshop2025 #ArtificialIntelligence #TechEducation #HandsOnLearning #FutureOfTech #ResearchAndDevelopment #InnovationUnleashed #DataScience #TechCommunity #StudentDevelopment
+Extracted image: word/media/image1.png

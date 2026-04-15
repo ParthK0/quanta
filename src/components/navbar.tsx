@@ -22,10 +22,12 @@ export function Navbar() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/20 bg-[#0B1120]/95 backdrop-blur-md selection:bg-[#00E5FF] selection:text-black">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 group">
-          <span className="text-2xl lg:text-3xl font-black font-syne text-white uppercase tracking-tighter leading-none group-hover:text-[#00E5FF] transition-colors">
-            QUANTA<span className="animate-pulse">_</span>
-          </span>
+        <Link href="/" className="flex items-center space-x-3 group">
+          <img
+            src="/logo.png"
+            alt="Quanta Logo"
+            className="h-24 md:h-32 w-auto object-contain brightness-0 invert group-hover:drop-shadow-[0_0_15px_rgba(0,229,255,0.4)] transition-all"
+          />
         </Link>
         
         <nav className="hidden md:flex items-center space-x-8 text-xs font-mono font-bold tracking-[0.2em] uppercase">
