@@ -196,7 +196,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="group relative h-[500px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
               >
-                <img src="/p2.jpeg" alt="Team" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-700 grayscale group-hover:grayscale-0" />
+                <img src="/p2.jpeg" alt="Team" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-[#050A14]/60 to-transparent" />
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -225,7 +225,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 className="group relative h-[500px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
               >
-                <img src="/whatsapp.jpeg" alt="Events" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-700 grayscale group-hover:grayscale-0" />
+                <img src="/whatsapp.jpeg" alt="Events" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-[#050A14]/60 to-transparent" />
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -254,7 +254,7 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="group relative h-[500px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
               >
-                <img src="/p2.jpeg" alt="Gallery" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-700 grayscale group-hover:grayscale-0 scale-x-[-1]" />
+                <img src="/p2.jpeg" alt="Gallery" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 scale-x-[-1]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-[#050A14]/60 to-transparent" />
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
