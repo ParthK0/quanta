@@ -12,6 +12,7 @@ const navLinks = [
   { name: "[ TEAM ]", href: "/team" },
   { name: "[ EVENTS ]", href: "/events" },
   { name: "[ GALLERY ]", href: "/gallery" },
+  { name: "[ RESOURCES ]", href: "/resources" },
 ];
 
 export function Navbar() {
