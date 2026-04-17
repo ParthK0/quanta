@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Database, Cpu, Users, Calendar, Image as ImageIcon, ArrowUpRight, Code, Zap, GitBranch, Activity } from "lucide-react";
+import { Terminal, Database, Cpu, Users, Calendar, Image as ImageIcon, ArrowUpRight, Zap, GitBranch, Activity } from "lucide-react";
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/animated-background";
 
@@ -204,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. EXPLORE (Team, Events, Gallery, Resources) */}
+      {/* 5. EXPLORE (Team, Events, Gallery) */}
       <section className="w-full py-32 px-4 md:px-6 z-10 bg-[#0B1120] border-y border-white/10">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 border-b border-white/20 pb-8 gap-6">
@@ -218,14 +218,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Team Node */}
             <Link href="/team">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative h-[400px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
+                className="group relative h-[500px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
               >
                 <img src="/p2.jpeg" alt="Team" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-[#050A14]/60 to-transparent" />
@@ -254,7 +254,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="group relative h-[400px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
+                className="group relative h-[500px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
               >
                 <img src="/whatsapp.jpeg" alt="Events" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-[#050A14]/60 to-transparent" />
@@ -283,7 +283,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="group relative h-[400px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
+                className="group relative h-[500px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
               >
                 <img src="/p2.jpeg" alt="Gallery" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 scale-x-[-1]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-[#050A14]/60 to-transparent" />
@@ -305,103 +305,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* Resources Node */}
-            <Link href="/resources">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="group relative h-[400px] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0B1120] via-[#050A14] to-[#0B1120]" />
-                {/* Code-like decorative pattern */}
-                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 font-mono text-[10px] text-[#00E5FF] leading-relaxed p-4 overflow-hidden pointer-events-none select-none">
-                  <p>import torch</p>
-                  <p>import numpy as np</p>
-                  <p>from sklearn.model import fit</p>
-                  <p>class NeuroScan(nn.Module):</p>
-                  <p>{"  "}def __init__(self):</p>
-                  <p>{"    "}super().__init__()</p>
-                  <p>{"    "}self.conv1 = nn.Conv2d(3, 64, 3)</p>
-                  <p>{"    "}self.pool = nn.MaxPool2d(2, 2)</p>
-                  <p>{"  "}def forward(self, x):</p>
-                  <p>{"    "}x = self.pool(F.relu(self.conv1(x)))</p>
-                  <p>{"    "}return x</p>
-                  <p>model = NeuroScan()</p>
-                  <p>optimizer = torch.optim.Adam(model.parameters())</p>
-                  <p>for epoch in range(100):</p>
-                  <p>{"  "}loss = train_step(model, data)</p>
-                  <p>{"  "}optimizer.zero_grad()</p>
-                  <p>{"  "}loss.backward()</p>
-                  <p>{"  "}optimizer.step()</p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent" />
-                
-                <div className="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-4">
-                  <Code className="w-10 h-10 text-[#00E5FF] mb-6 transform group-hover:scale-110 transition-transform" />
-                  <h3 className="text-4xl font-black font-syne text-white uppercase tracking-tighter mb-2">
-                    RESOURCES
-                  </h3>
-                  <p className="font-mono text-sm text-white/50 uppercase tracking-widest mb-6">
-                    Open-source projects and research frameworks built by Quanta.
-                  </p>
-                  
-                  <div className="flex items-center gap-2 text-[#00E5FF] font-mono text-xs tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    <span>Browse Repos</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-
           </div>
-        </div>
-      </section>
-
-      {/* 6. CTA - JOIN QUANTA */}
-      <section className="w-full z-10 bg-[#050A14] border-t border-white/10">
-        <div className="container mx-auto px-4 md:px-6 py-32">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative border-2 border-[#00E5FF] p-12 md:p-20 text-center overflow-hidden group hover:border-white/50 transition-colors duration-500"
-          >
-            {/* Animated corner accents */}
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-[#00E5FF]" />
-            <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-[#00E5FF]" />
-            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-[#00E5FF]" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-[#00E5FF]" />
-
-            <p className="font-mono text-[#00E5FF] text-xs tracking-[0.4em] uppercase mb-8">
-              {"// SIGNAL_INCOMING > JOIN_REQUEST"}
-            </p>
-            <h2 className="text-4xl md:text-7xl font-black font-syne text-white uppercase tracking-tighter leading-none mb-6">
-              BUILD THE FUTURE<span className="text-[#00E5FF] animate-pulse">_</span>
-            </h2>
-            <p className="max-w-2xl mx-auto font-mono text-white/50 uppercase tracking-widest text-sm leading-relaxed mb-12">
-              Whether you&apos;re training your first model or deploying production-grade architectures, Quanta is your launchpad.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://www.instagram.com/quanta.guofficial/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-10 py-5 bg-[#00E5FF] text-black font-mono font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300 text-sm"
-              >
-                JOIN QUANTA →
-              </a>
-              <a 
-                href="https://github.com/quantaclub" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-10 py-5 border-2 border-white/30 text-white font-mono font-bold tracking-[0.2em] uppercase hover:border-[#00E5FF] hover:text-[#00E5FF] transition-colors duration-300 text-sm"
-              >
-                VIEW GITHUB
-              </a>
-            </div>
-          </motion.div>
         </div>
       </section>
 
