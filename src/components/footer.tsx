@@ -103,7 +103,7 @@ export function Footer() {
                 allowFullScreen={true} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="relative z-10 grayscale hover:grayscale-0 transition-all duration-500"
+                className="relative z-10"
               ></iframe>
               <div className="absolute top-2 right-2 z-20 pointer-events-none opacity-0 group-hover/map:opacity-100 transition-opacity">
                 <div className="px-2 py-0.5 bg-black/80 border border-[#00E5FF]/30 text-[8px] font-mono text-[#00E5FF] uppercase tracking-widest">
