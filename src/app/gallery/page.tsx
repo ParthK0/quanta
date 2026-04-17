@@ -43,10 +43,11 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0B1120] selection:bg-[#00E5FF] selection:text-black pt-32 pb-16">
       <div className="container px-6 md:px-12 lg:px-24">
-        
+
         {/* Header */}
         <div className="mb-20 border-b border-white/20 pb-8">
-          <motion.h1 
+          <motion.h1
+
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-[8rem] font-black font-syne text-white uppercase tracking-tighter leading-none"
@@ -61,7 +62,7 @@ export default function GalleryPage() {
           {/* Legacy Context */}
           <div className="flex-1 w-full max-w-2xl lg:max-w-none">
             <h2 className="text-4xl md:text-5xl font-black font-syne text-transparent uppercase tracking-tighter"
-                style={{ WebkitTextStroke: "1px white" }}>
+              style={{ WebkitTextStroke: "1px white" }}>
               {"<sys>"} HIGHLIGHT {"</sys>"}
             </h2>
             <div className="mt-8 space-y-6">
@@ -78,33 +79,33 @@ export default function GalleryPage() {
           <div className="flex-1 w-full relative min-h-[400px] md:min-h-[550px] mt-10 lg:mt-0">
             {/* Reference Frame Accent */}
             <div className="absolute -right-4 top-4 md:-right-8 md:top-8 w-full h-[90%] border border-[#00E5FF]/20 mix-blend-screen pointer-events-none" />
-            
+
             {/* Large Back Image (p2) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="absolute right-0 top-0 w-[80%] h-[85%] border border-white/10 bg-[#050A14] overflow-hidden"
             >
-              <img 
-                src="/p2.jpeg" 
-                alt="Quanta Legacy Background" 
+              <img
+                src="/p2.jpeg"
+                alt="Quanta Legacy Background"
                 className="w-full h-full object-cover transition-opacity duration-500 hover:scale-105"
               />
             </motion.div>
-            
+
             {/* Small Overlapping Front Image (whatsapp) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="absolute left-0 bottom-0 w-[60%] h-[55%] border-8 border-[#0B1120] bg-[#050A14] overflow-hidden z-10 shadow-2xl shadow-black/80"
             >
-              <img 
-                src="/whatsapp.jpeg" 
-                alt="Quanta Highlight" 
+              <img
+                src="/whatsapp.jpeg"
+                alt="Quanta Highlight"
                 className="w-full h-full object-cover transition-opacity duration-500 hover:scale-105"
               />
             </motion.div>
@@ -142,7 +143,7 @@ export default function GalleryPage() {
               VISUAL LOGS
             </h2>
             {GALLERY.length > 6 && (
-              <button 
+              <button
                 onClick={() => setShowAllLogs(!showAllLogs)}
                 className="px-6 py-3 border border-[#00E5FF] text-[#00E5FF] hover:bg-[#00E5FF] hover:text-black transition-colors font-mono uppercase tracking-widest text-sm flex items-center gap-2 group"
               >
@@ -150,7 +151,7 @@ export default function GalleryPage() {
               </button>
             )}
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
               {GALLERY.slice(0, showAllLogs ? GALLERY.length : 6).map((img, i) => (
@@ -162,12 +163,12 @@ export default function GalleryPage() {
                   transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
                   className="group relative aspect-[4/3] border border-white/20 overflow-hidden bg-[#050A14] cursor-pointer"
                 >
-                  <img 
-                    src={img} 
-                    alt={`Log ${i}`} 
+                  <img
+                    src={img}
+                    alt={`Log ${i}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale-[0.2] group-hover:grayscale-0"
                   />
-                  
+
                   {/* Detail Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-[#00E5FF] font-mono text-[10px] tracking-[0.3em] mb-2 uppercase block">DATA_STREAM_{i.toString().padStart(3, '0')}</span>
@@ -177,7 +178,7 @@ export default function GalleryPage() {
                       SNAPSHOT_ACTIVE // STABILITY: 98.4%
                     </p>
                   </div>
-                  
+
                   {/* Badge */}
                   <div className="absolute top-4 left-4 bg-black/80 border border-white/20 px-3 py-1">
                     <span className="text-[#00E5FF] font-mono text-[10px] tracking-widest uppercase">LOG_{i.toString().padStart(3, '0')}</span>

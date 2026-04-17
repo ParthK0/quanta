@@ -24,7 +24,7 @@ const squads: Squad[] = [
   {
     name: "AI-Tech Force",
     tag: "💻",
-    accent: "#00E5FF",
+    accent: "#1cd3e7ff",
     accentBg: "rgba(0,229,255,0.95)",
     members: [
       {
@@ -46,7 +46,7 @@ const squads: Squad[] = [
       {
         name: "Parth Khowal",
         role: "Technical Lead",
-        bio: "Runs on snacks, sarcasm, and chaotic energy—somehow still functioning like a masterpiece 😌",
+        bio: "Runs on snacks, sarcasm, and chaotic energy—somehow still functioning like a masterpiece ",
         image: "/team-members/3-parth-khowal.jpeg",
         github: "https://github.com/ParthK0",
         linkedin: "https://www.linkedin.com/in/parth-khowal-a37903294/",
@@ -81,7 +81,7 @@ const squads: Squad[] = [
     name: "Operations Squad",
     tag: "⚙️",
     accent: "#A78BFA",
-    accentBg: "rgba(167,139,250,0.95)",
+    accentBg: "rgba(196, 139, 250, 0.95)",
     members: [
       {
         name: "Manjeet",
