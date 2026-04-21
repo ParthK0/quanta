@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Database, Cpu, Users, Calendar, Image as ImageIcon, ArrowUpRight, Zap, GitBranch, Activity } from "lucide-react";
+import { Users, Calendar, Image as ImageIcon, ArrowUpRight, Zap, GitBranch } from "lucide-react";
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/animated-background";
 
@@ -9,7 +9,6 @@ const STATS = [
   { value: "13+", label: "CORE MEMBERS", icon: Users },
   { value: "6+", label: "EVENTS DEPLOYED", icon: Zap },
   { value: "4+", label: "OPEN SOURCE PROJECTS", icon: GitBranch },
-  { value: "3", label: "CORE DOMAINS", icon: Activity },
 ];
 
 export default function Home() {
@@ -110,7 +109,7 @@ export default function Home() {
 
       {/* 3. STATS STRIP */}
       <section className="w-full z-10 bg-[#00E5FF] border-y-4 border-black">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -132,79 +131,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. DOMAINS (Strict High-Contrast Grid) */}
-      <section className="w-full py-32 px-4 md:px-6 bg-[#050A14] z-10">
-        <div className="container mx-auto">
-          <div className="mb-16 border-b border-white/20 pb-4">
-            <h2 className="text-4xl md:text-5xl font-black font-syne uppercase tracking-tighter text-white">
-              CORE DOMAINS_
-            </h2>
-          </div>
-
-          <div className="grid gap-0 md:grid-cols-3 border border-white/10">
-            {/* Domain 00 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="group flex flex-col justify-between p-10 min-h-[450px] border border-white/10 bg-[#0B1120] hover:bg-[#00E5FF] hover:text-black transition-colors duration-300"
-            >
-              <div className="flex justify-between items-start mb-8">
-                <span className="text-6xl font-black font-syne text-white/20 group-hover:text-black/30 transition-colors">00</span>
-                <Terminal className="w-8 h-8 text-white group-hover:text-black transition-colors" />
-              </div>
-              <div>
-                <h3 className="text-3xl font-black font-syne uppercase tracking-tighter mb-4 transition-colors">Machine Learning</h3>
-                <p className="font-mono text-sm opacity-60 group-hover:opacity-100 uppercase tracking-widest leading-relaxed transition-colors">
-                  Predictive engines and autonomous systems trained on massive telemetry datasets.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Domain 01 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="group flex flex-col justify-between p-10 min-h-[450px] border border-white/10 bg-[#0B1120] hover:bg-[#00E5FF] hover:text-black transition-colors duration-300"
-            >
-              <div className="flex justify-between items-start mb-8">
-                <span className="text-6xl font-black font-syne text-white/20 group-hover:text-black/30 transition-colors">01</span>
-                <Database className="w-8 h-8 text-white group-hover:text-black transition-colors" />
-              </div>
-              <div>
-                <h3 className="text-3xl font-black font-syne uppercase tracking-tighter mb-4 transition-colors">Data Engineering</h3>
-                <p className="font-mono text-sm opacity-60 group-hover:opacity-100 uppercase tracking-widest leading-relaxed transition-colors">
-                  Architecting robust pipelines and analytical clustered data warehouses.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Domain 02 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group flex flex-col justify-between p-10 min-h-[450px] border border-white/10 bg-[#0B1120] hover:bg-[#00E5FF] hover:text-black transition-colors duration-300"
-            >
-              <div className="flex justify-between items-start mb-8">
-                <span className="text-6xl font-black font-syne text-white/20 group-hover:text-black/30 transition-colors">02</span>
-                <Cpu className="w-8 h-8 text-white group-hover:text-black transition-colors" />
-              </div>
-              <div>
-                <h3 className="text-3xl font-black font-syne uppercase tracking-tighter mb-4 transition-colors">Artificial Intelligence</h3>
-                <p className="font-mono text-sm opacity-60 group-hover:opacity-100 uppercase tracking-widest leading-relaxed transition-colors">
-                  Deploying autonomous agents and structured reinforcement learning vectors.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. EXPLORE (Team, Events, Gallery) */}
+      {/* 4. EXPLORE (Team, Events, Gallery) */}
       <section className="w-full py-32 px-4 md:px-6 z-10 bg-[#0B1120] border-y border-white/10">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 border-b border-white/20 pb-8 gap-6">
