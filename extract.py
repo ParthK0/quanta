@@ -26,5 +26,6 @@ def extract_docx(doc_path):
     except Exception as e:
         print(f"Failed to extract {doc_path}: {e}")
 
+
 for file in glob.glob('E:\\quanta\\src\\app\\events\\event details past\\*.docx'):
     extract_docx(file)

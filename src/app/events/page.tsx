@@ -28,7 +28,7 @@ const REAL_EVENTS: Event[] = [
     location: "MAIN AUDITORIUM",
     status: "upcoming",
     description: "Join us for a deep dive into the fundamentals of neural networks and deep learning. Perfect for beginners and enthusiasts looking to understand the core mechanics of AI.",
-    image: "/next.svg",
+    image: "/events/event5.png",
     accent: "group-hover:bg-[#00E5FF] group-hover:text-black",
     border: "border-[#00E5FF]"
   },
@@ -41,7 +41,7 @@ const REAL_EVENTS: Event[] = [
     location: "INNOVATION HUB",
     status: "upcoming",
     description: "48 hours of intense data analysis and problem solving. Compete with the best minds to uncover insights and build predictive models that matter.",
-    image: "/next.svg",
+    image: "/events/event6.png",
     accent: "group-hover:bg-[#00E5FF] group-hover:text-black",
     border: "border-[#00E5FF]"
   },
@@ -214,14 +214,14 @@ export default function EventsPage() {
 
                 <div className="flex flex-col lg:flex-row">
                   {/* Image Section */}
-                  <div className="lg:w-1/2 h-64 lg:h-auto relative bg-black flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#00E5FF]/20 overflow-hidden">
+                  <div className="lg:w-1/2 h-72 lg:h-auto lg:min-h-[500px] relative bg-black flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#00E5FF]/20 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={selectedEvent.image} 
                       alt={selectedEvent.title}
-                      className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover object-center opacity-100 hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-40" />
                   </div>
 
                   {/* Content Section */}
