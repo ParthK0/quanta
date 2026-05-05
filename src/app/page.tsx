@@ -25,7 +25,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             className="text-7xl md:text-[10rem] font-black font-syne text-white uppercase tracking-tighter leading-none mix-blend-difference"
           >
-            QUANTA<span className="text-[#00E5FF] animate-pulse mix-blend-normal">_</span>
+            QUANTCRAFT<span className="text-[#2ECC71] animate-pulse mix-blend-normal">_</span>
           </motion.h1>
 
           <motion.div
@@ -55,8 +55,8 @@ export default function Home() {
                 {"<sys>"} MISSION {"</sys>"}
               </h2>
               <div className="mt-8 space-y-6">
-                <p className="text-xl md:text-2xl text-[#00E5FF] font-mono tracking-widest uppercase">
-                  Architecting Intelligence.
+                <p className="text-xl md:text-2xl text-[#2ECC71] font-mono tracking-widest uppercase">
+                  Crafting Intelligence.
                 </p>
                 <p className="text-base md:text-xl text-white/60 font-mono uppercase tracking-widest leading-relaxed">
                   Quanta is a premier student-led research cell dedicated to advancing Machine Learning, Artificial Intelligence, and Data Engineering through open-source architecture and rigorous deployment cycles.
@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* 3. STATS STRIP */}
-      <section className="w-full z-10 bg-[#00E5FF] border-y-4 border-black">
+      <section className="w-full z-10 bg-[#2ECC71] border-y-4 border-black">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {STATS.map((stat, i) => (
             <motion.div
@@ -139,8 +139,8 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-black font-syne uppercase tracking-tighter text-white">
                 EXPLORE_THE_ECOSYSTEM
               </h2>
-              <p className="font-mono text-[#00E5FF] tracking-widest uppercase mt-4">
-                // Core Nodes of Quanta
+              <p className="font-mono text-[#2ECC71] tracking-widest uppercase mt-4">
+                // World Nodes of QuantCraft
               </p>
             </div>
           </div>
