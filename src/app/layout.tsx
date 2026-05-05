@@ -17,8 +17,8 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quanta - The Data Science Club",
-  description: "Where Data Meets Intelligence. Empowering students in AI, ML, and Data Analytics.",
+  title: "QuantCraft - Pixel-Perfect Data Science",
+  description: "The premier student-led research cell for AI, ML, and Data Engineering, featuring a high-fidelity Minecraft-inspired ecosystem.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
